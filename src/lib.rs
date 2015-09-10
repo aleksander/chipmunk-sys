@@ -20,7 +20,7 @@ impl ::std::default::Default for Struct_cpVect {
 }
 pub type cpVect = Struct_cpVect;
 impl Struct_cpVect {
-    fn to_tuple(&self) -> (cpFloat, cpFloat) {
+    pub fn to_tuple(&self) -> (cpFloat, cpFloat) {
         (self.x, self.y)
     }
 }
@@ -1014,7 +1014,7 @@ extern "C" {
      -> ();
     pub fn cpArbiterGetFriction(arb: *const cpArbiter) -> cpFloat;
     pub fn cpArbiterSetFriction(arb: *mut cpArbiter, friction: cpFloat) -> ();
-    pub fn cpArbiterGetSurfaceVelocity(arb: *mut cpArbiter) -> cpVect;
+    pub fn cpArbiterGetSurfaceVelocity(arb: *const cpArbiter) -> cpVect;
     pub fn cpArbiterSetSurfaceVelocity(arb: *mut cpArbiter, vr: cpVect) -> ();
     pub fn cpArbiterGetUserData(arb: *const cpArbiter) -> cpDataPointer;
     pub fn cpArbiterSetUserData(arb: *mut cpArbiter, userData: cpDataPointer)
